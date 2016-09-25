@@ -22,6 +22,7 @@ public class DMatrix {
 
         //чтение матрицы А:
         try {
+            System.out.println("A=");
             File file = new File("C:\\Users\\Notebook\\IdeaProjects\\DMatrix\\DMatrixА.txt");
             FileReader fr = new FileReader(file);//создаем объект
             BufferedReader reader = new BufferedReader(fr);//создаем BufferedReader с существующего FileReader для построчного считывания
@@ -39,10 +40,11 @@ public class DMatrix {
                 heightA++;
             }
             for (int i = 0; i < heightA; i++) {//печать массива
+                System.out.print("|"+"\t");
                 for (int j = 0; j < widthA; j++) {
                     System.out.print(a[i][j] + "\t");
                 }
-                System.out.println();
+                System.out.println("|");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -51,6 +53,7 @@ public class DMatrix {
         }
         System.out.println();
         try { //чтение матрицы B:
+            System.out.println("B=");
             File file = new File("C:\\Users\\Notebook\\IdeaProjects\\DMatrix\\DMatrixB.txt");
             FileReader fr = new FileReader(file);//создаем объект FileReader для объекта File
             BufferedReader reader = new BufferedReader(fr);//создаем BufferedReader с существующего FileReader для построчного считывания
@@ -68,10 +71,11 @@ public class DMatrix {
                 heightB++;
             }
             for (int i = 0; i < heightB; i++) { //печать массива
+                System.out.print("|"+"\t");
                 for (int j = 0; j < widthB; j++) {
                     System.out.print(b[i][j] + "\t");
                 }
-                System.out.println();
+                System.out.println("|");
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -94,10 +98,11 @@ public class DMatrix {
         System.out.println(); //вывод умножение
         System.out.println("A*B=");
         for (int i = 0; i < heightA; i++) {
+            System.out.print("|"+"\t");
             for (int j = 0; j < widthB; j++) {
                 System.out.print(c[i][j] + "\t");
             }
-            System.out.println();
+            System.out.println("|"+"\t");
         }
     }
 }
